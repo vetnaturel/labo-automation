@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tuto : Envoi d'e-mails automatiques depuis Google Sheets - AutomationLab</title>
+    <style>
+        :root { --p: #6366f1; --pd: #4f46e5; --bg: #f8fafc; --txt: #0f172a; --txt-l: #475569; }
+        body { font-family: sans-serif; background: var(--bg); color: var(--txt); margin: 0; padding: 0; line-height: 1.6; }
+        header { background: white; border-bottom: 1px solid #e2e8f0; padding: 1.5rem; }
+        .logo { font-size: 1.5rem; font-weight: bold; color: var(--p); text-decoration: none; }
+        .container { max-width: 800px; margin: 2rem auto; padding: 0 1rem; background: white; border-radius: 12px; border: 1px solid #e2e8f0; padding: 2rem; box-shadow: 0 4px 6px rgba(0,0,0,0.05); }
+        h1 { font-size: 2.2rem; color: var(--txt); margin-top: 0; }
+        h2 { font-size: 1.5rem; color: var(--txt); margin-top: 2rem; border-bottom: 2px solid #f1f5f9; padding-bottom: 0.5rem; }
+        p { color: var(--txt-l); font-size: 1.1rem; }
+        ol { color: var(--txt-l); font-size: 1.1rem; padding-left: 1.5rem; }
+        li { margin-bottom: 0.75rem; }
+        .cta-box { background: #f5f3ff; border-left: 4px solid var(--p); padding: 1.5rem; border-radius: 0 8px 8px 0; margin: 2rem 0; }
+        .cta-box p { margin-top: 0; font-weight: bold; color: var(--txt); }
+        .btn { display: inline-block; background: var(--p); color: white; padding: 0.75rem 1.5rem; border-radius: 8px; text-decoration: none; font-weight: bold; }
+        .btn:hover { background: var(--pd); }
+        footer { text-align: center; padding: 2rem 1rem; color: var(--txt-l); margin-top: 2rem; }
+    </style>
+</head>
+<body>
+
+    <header>
+        <a href="index.html" class="logo">⚡ AutomationLab</a>
+    </header>
+
+    <main class="container">
+        <h1>Comment envoyer des e-mails automatiques depuis Google Sheets</h1>
+        <p>Copier et coller manuellement des messages à ses clients depuis un tableau de suivi est une perte de temps monumentale. Dans ce guide pratique, vous allez apprendre à configurer un système d'envoi d'e-mails 100 % automatique grâce à <strong>Make</strong>, et ce, sans toucher à une seule ligne de code.</p>
+
+        <div class="cta-box">
+            <p>🔧 Avant de commencer :</p>
+            <p style="font-weight: normal;">Pour suivre ce tutoriel, vous avez besoin d'un compte gratuit. Les 1 000 premières automatisations mensuelles sont offertes.</p>
+            <a href="#" class="btn" target="_blank">Créer mon compte gratuit sur Make</a>
+        </div>
+
+        <h2>Étape 1 : Organiser votre fichier Google Sheets</h2>
+        <p>Ouvrez votre Google Drive et créez une feuille de calcul simple. Pour que l'automatisation fonctionne correctement, votre tableau doit comporter au moins trois colonnes sur la première ligne :</p>
+        <ol>
+            <li><strong>Nom</strong> (pour personnaliser le message)</li>
+            <li><strong>Email</strong> (l'adresse du destinataire)</li>
+            <li><strong>Statut</strong> (écrivez "À envoyer" sur les lignes concernées)</li>
+        </ol>
+
+        <h2>Étape 2 : Configurer le déclencheur sur Make</h2>
+        <p>Connectez-vous sur votre espace de travail Make pour lier votre tableau :</p>
+        <ol>
+            <li>Cliquez sur <strong>Create a new scenario</strong> en haut à droite.</li>
+            <li>Cliquez sur le cercle central, recherchez l'application <strong>Google Sheets</strong>.</li>
+            <li>Sélectionnez l'option <strong>Watch Rows</strong> (Surveiller les lignes).</li>
+            <li>Suivez les instructions à l'écran pour connecter votre compte Google et sélectionnez le fichier créé à l'étape 1.</li>
+        </ol>
+
+        <h2>Étape 3 : Ajouter l'envoi de mail via Gmail ou Outlook</h2>
+        <p>Maintenant que Make sait où lire les données, connectons votre boîte de réception :</p>
+        <ol>
+            <li>Ajoutez un nouveau module à la suite du premier en cliquant sur "Add another module".</li>
+            <li>Cherchez <strong>Gmail</strong> (ou Email/Outlook) et choisissez l'action <strong>Send an email</strong>.</li>
+            <li>Dans le champ <i>To</i> (Destinataire), cliquez sur la case vide : une liste de variables apparaît. Sélectionnez la variable dynamique <strong>Email</strong> issue de votre bloc Google Sheets.</li>
+            <li>Rédigez votre sujet et le corps de votre message. Vous pouvez personnaliser le texte en écrivant par exemple : <i>"Bonjour [Nom]..."</i> (en insérant la variable dynamique Nom).</li>
+        </ol>
+
+        <h2>Étape 4 : Activer votre robot d'envoi</h2>
+        <p>Cliquez sur le bouton <strong>Run once</strong> en bas à gauche de l'interface de Make pour faire un test réel. Si le mail se transmet avec succès, basculez simplement l'interrupteur principal situé tout en bas sur <strong>ON</strong>. Votre scénario va s'exécuter en arrière-plan de manière autonome !</p>
+
+        <div class="cta-box">
+            <p>🚀 Prêt à automatiser votre premier tableau ?</p>
+            <a href="#" class="btn" target="_blank">Rejoindre Make gratuitement dès aujourd'hui</a>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 AutomationLab. Tous droits réservés.</p>
+    </footer>
+
+</body>
+</html>
