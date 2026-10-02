@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+# Indication du plan du site pour Google et Bing
+Sitemap: https://github.io
