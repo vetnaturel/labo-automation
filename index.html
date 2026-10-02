@@ -1,1 +1,60 @@
 
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AutomationLab - Le guide du No-Code</title>
+    <style>
+        :root { --p: #6366f1; --pd: #4f46e5; --bg: #f8fafc; --txt: #0f172a; --txt-l: #475569; }
+        body { font-family: sans-serif; background: var(--bg); color: var(--txt); margin: 0; padding: 0; }
+        header { background: white; border-bottom: 1px solid #e2e8f0; padding: 1.5rem; }
+        .logo { font-size: 1.5rem; font-weight: bold; color: var(--p); text-decoration: none; }
+        .hero { max-width: 800px; margin: 4rem auto; text-align: center; padding: 0 1rem; }
+        .hero h1 { font-size: 2.5rem; margin-bottom: 1rem; }
+        .hero p { font-size: 1.2rem; color: var(--txt-l); }
+        .container { max-width: 1100px; margin: 0 auto; padding: 2rem 1rem; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; }
+        .card { background: white; border-radius: 12px; border: 1px solid #e2e8f0; padding: 2rem; display: flex; flex-direction: column; justify-content: space-between; box-shadow: 0 4px 6px rgba(0,0,0,0.05); }
+        .card h2 { font-size: 1.3rem; margin-top: 0; }
+        .card p { color: var(--txt-l); margin-bottom: 1.5rem; }
+        .btn { display: block; background: var(--p); color: white; padding: 0.75rem; border-radius: 8px; text-decoration: none; font-weight: bold; text-align: center; }
+        .btn:hover { background: var(--pd); }
+        footer { text-align: center; padding: 4rem 1rem; color: var(--txt-l); }
+    </style>
+</head>
+<body>
+
+    <header>
+        <a href="#" class="logo">⚡ AutomationLab</a>
+    </header>
+
+    <section class="hero">
+        <h1>Gagnez du temps grâce au No-Code</h1>
+        <p>Découvrez nos guides et comparatifs pour automatiser vos tâches et booster votre productivité.</p>
+    </section>
+
+    <main class="container">
+        <div class="grid">
+            
+            <div class="card">
+                <h2>Make vs Zapier : Quel outil choisir ?</h2>
+                <p>Hésitez-vous entre les deux géants du No-code ? Découvrez notre comparatif complet basé sur les tarifs et la simplicité.</p>
+                <a href="make-vs-zapier.html" class="btn">Lire le comparatif</a>
+            </div>
+
+            <div class="card">
+                <h2>E-mails automatiques depuis Google Sheets</h2>
+                <p>Apprenez pas à pas à connecter vos feuilles de calcul Google Sheets à Gmail en utilisant l'outil gratuit Make.</p>
+                <a href="tuto-sheets-make.html" class="btn">Voir le tutoriel</a>
+            </div>
+
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 AutomationLab. Tous droits réservés.</p>
+    </footer>
+
+</body>
+</html>
