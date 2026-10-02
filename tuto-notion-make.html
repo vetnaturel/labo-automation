@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tuto : Connecter un formulaire à Notion avec Make - AutomationLab</title>
+    <style>
+        :root { --p: #6366f1; --pd: #4f46e5; --bg: #f8fafc; --txt: #0f172a; --txt-l: #475569; }
+        body { font-family: sans-serif; background: var(--bg); color: var(--txt); margin: 0; padding: 0; line-height: 1.6; }
+        header { background: white; border-bottom: 1px solid #e2e8f0; padding: 1.5rem; }
+        .logo { font-size: 1.5rem; font-weight: bold; color: var(--p); text-decoration: none; }
+        .container { max-width: 800px; margin: 2rem auto; padding: 0 1rem; background: white; border-radius: 12px; border: 1px solid #e2e8f0; padding: 2rem; box-shadow: 0 4px 6px rgba(0,0,0,0.05); }
+        h1 { font-size: 2.2rem; color: var(--txt); margin-top: 0; }
+        h2 { font-size: 1.5rem; color: var(--txt); margin-top: 2rem; border-bottom: 2px solid #f1f5f9; padding-bottom: 0.5rem; }
+        p { color: var(--txt-l); font-size: 1.1rem; }
+        ol { color: var(--txt-l); font-size: 1.1rem; padding-left: 1.5rem; }
+        li { margin-bottom: 0.75rem; }
+        .info-box { background: #f0fdf4; border-left: 4px solid #22c55e; padding: 1.5rem; border-radius: 0 8px 8px 0; margin: 2rem 0; }
+        .info-box p { margin-top: 0; font-weight: bold; color: #166534; }
+        footer { text-align: center; padding: 2rem 1rem; color: var(--txt-l); margin-top: 2rem; }
+    </style>
+</head>
+<body>
+
+    <header>
+        <a href="index.html" class="logo">⚡ AutomationLab</a>
+    </header>
+
+    <main class="container">
+        <h1>Comment connecter un formulaire de site à Notion via Make</h1>
+        <p>Notion est un outil extraordinaire pour centraliser des données, mais y recopier manuellement les messages reçus depuis un formulaire de contact est une perte de temps. Dans ce guide complet, découvrez comment automatiser la réception de vos prospects directement dans votre base de données Notion.</p>
+
+        <div class="info-box">
+            <p>💡 Pourquoi utiliser cette méthode ?</p>
+            <p style="font-weight: normal; color: #166534;">En centralisant vos demandes clients directement dans Notion, vous pouvez leur attribuer un statut (En cours, Traité), ajouter des notes et collaborer en équipe sans jamais ouvrir votre boîte mail.</p>
+        </div>
+
+        <h2>Étape 1 : Préparer la base de données dans Notion</h2>
+        <p>Ouvrez votre espace Notion et créez une nouvelle page sous forme de <strong>Tableau (Database)</strong>. Ajoutez les colonnes suivantes :</p>
+        <ol>
+            <li><strong>Nom</strong> (colonne de type texte par défaut)</li>
+            <li><strong>Email</strong> (colonne de type Email)</li>
+            <li><strong>Message</strong> (colonne de type texte brut)</li>
+        </ol>
+
+        <h2>Étape 2 : Créer le Webhook de réception sur Make</h2>
+        <p>Un Webhook est une URL spéciale capable de "recevoir" des informations instantanément dès qu'un formulaire est validé :</p>
+        <ol>
+            <li>Sur votre tableau de bord Make, créez un nouveau scénario.</li>
+            <li>Sélectionnez le module <strong>Webhooks</strong> et choisissez l'action <strong>Custom Webhook</strong>.</li>
+            <li>Cliquez sur "Add" pour générer une URL unique. Copiez cette URL et collez-la dans les réglages de votre outil de formulaire (Typeform, Elementor, Tally, etc.).</li>
+        </ol>
+
+        <h2>Étape 3 : Configurer l'action d'enregistrement dans Notion</h2>
+        <p>Une fois que Make intercepte les données du formulaire, il doit les envoyer au bon endroit :</p>
+        <ol>
+            <li>Ajoutez un second module à votre scénario et cherchez <strong>Notion</strong>.</li>
+            <li>Sélectionnez l'action <strong>Create a Database Item</strong> (Créer un élément de base de données).</li>
+            <li>Connectez votre compte Notion et donnez l'autorisation d'accéder à la page créée à l'étape 1.</li>
+            <li>Liez les champs : faites glisser la donnée du formulaire <i>Prénom/Nom</i> dans la case "Nom" de Notion, et faites de même pour l'adresse e-mail et le contenu du texte.</li>
+        </ol>
+
+        <h2>Étape 4 : Activation et test en conditions réelles</h2>
+        <p>Activez votre scénario sur Make en basculant l'interrupteur sur <strong>ON</strong>. Allez sur votre site internet et soumettez un faux message dans votre formulaire. Ouvrez votre page Notion : une nouvelle ligne vient de se créer instantanément avec toutes les informations saisies ! Vous venez de créer un CRM automatisé et gratuit.</p>
+
+        <!-- Bloc de Maillage SEO Interne -->
+        <div style="margin-top: 3rem; padding-top: 1.5rem; border-top: 1px solid #e2e8f0;">
+            <h3>💡 Continuez votre lecture :</h3>
+            <p>• Vous utilisez des tableurs ? Apprenez à <a href="tuto-sheets-make.html">envoyer des e-mails automatiques depuis Google Sheets</a>.</p>
+            <p>• Vous hésitez sur l'outil ? Lisez notre <a href="make-vs-zapier.html">comparatif complet entre Make et Zapier</a>.</p>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 AutomationLab. Tous droits réservés.</p>
+    </footer>
+
+</body>
+</html>
