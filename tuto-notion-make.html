@@ -3,21 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tuto : Connecter un formulaire à Notion avec Make - AutomationLab</title>
+    <title>Connecter un Formulaire à Notion via Make - AutomationLab</title>
     <style>
         :root { --p: #6366f1; --pd: #4f46e5; --bg: #f8fafc; --txt: #0f172a; --txt-l: #475569; }
         body { font-family: sans-serif; background: var(--bg); color: var(--txt); margin: 0; padding: 0; line-height: 1.6; }
         header { background: white; border-bottom: 1px solid #e2e8f0; padding: 1.5rem; }
         .logo { font-size: 1.5rem; font-weight: bold; color: var(--p); text-decoration: none; }
-        .container { max-width: 800px; margin: 2rem auto; padding: 0 1rem; background: white; border-radius: 12px; border: 1px solid #e2e8f0; padding: 2rem; box-shadow: 0 4px 6px rgba(0,0,0,0.05); }
-        h1 { font-size: 2.2rem; color: var(--txt); margin-top: 0; }
-        h2 { font-size: 1.5rem; color: var(--txt); margin-top: 2rem; border-bottom: 2px solid #f1f5f9; padding-bottom: 0.5rem; }
-        p { color: var(--txt-l); font-size: 1.1rem; }
-        ol { color: var(--txt-l); font-size: 1.1rem; padding-left: 1.5rem; }
-        li { margin-bottom: 0.75rem; }
-        .info-box { background: #f0fdf4; border-left: 4px solid #22c55e; padding: 1.5rem; border-radius: 0 8px 8px 0; margin: 2rem 0; }
-        .info-box p { margin-top: 0; font-weight: bold; color: #166534; }
-        footer { text-align: center; padding: 2rem 1rem; color: var(--txt-l); margin-top: 2rem; }
+        .container { max-width: 800px; margin: 2rem auto; padding: 0 1rem; }
+        h1 { font-size: 2.2rem; color: var(--txt); }
+        h2 { font-size: 1.4rem; margin-top: 2rem; color: var(--pd); }
+        .step { background: white; border: 1px solid #e2e8f0; border-radius: 8px; padding: 1.5rem; margin-bottom: 1.5rem; box-shadow: 0 2px 4px rgba(0,0,0,0.02); }
+        .btn { display: inline-block; background: var(--p); color: white; padding: 0.75rem 1.5rem; border-radius: 8px; text-decoration: none; font-weight: bold; margin-top: 1rem; }
+        .btn:hover { background: var(--pd); }
+        footer { text-align: center; padding: 4rem 1rem; color: var(--txt-l); }
     </style>
 </head>
 <body>
@@ -27,52 +25,47 @@
     </header>
 
     <main class="container">
-        <h1>Comment connecter un formulaire de site à Notion via Make</h1>
-        <p>Notion est un outil extraordinaire pour centraliser des données, mais y recopier manuellement les messages reçus depuis un formulaire de contact est une perte de temps. Dans ce guide complet, découvrez comment automatiser la réception de vos prospects directement dans votre base de données Notion.</p>
+        <a href="index.html" style="color: var(--p); text-decoration: none;">← Retour à l'accueil</a>
+        
+        <h1>Tutoriel : Connecter un formulaire web à Notion avec Make</h1>
+        <p>Apprenez à centraliser automatiquement les soumissions de vos formulaires dans une base de données Notion en moins de 10 minutes.</p>
 
-        <div class="info-box">
-            <p>💡 Pourquoi utiliser cette méthode ?</p>
-            <p style="font-weight: normal; color: #166534;">En centralisant vos demandes clients directement dans Notion, vous pouvez leur attribuer un statut (En cours, Traité), ajouter des notes et collaborer en équipe sans jamais ouvrir votre boîte mail.</p>
+        <div class="step">
+            <h2>Étape 1 : Préparer votre compte Make</h2>
+            <p>Pour commencer, créez un compte gratuit sur Make si ce n'est pas déjà fait. L'offre gratuite suffit largement pour ce projet.</p>
+            <a href="https://www.make.com/en/register?pc=vetnaturel" target="_blank" rel="noopener" class="btn">Créer un compte Make gratuit</a>
         </div>
 
-        <h2>Étape 1 : Préparer la base de données dans Notion</h2>
-        <p>Ouvrez votre espace Notion et créez une nouvelle page sous forme de <strong>Tableau (Database)</strong>. Ajoutez les colonnes suivantes :</p>
-        <ol>
-            <li><strong>Nom</strong> (colonne de type texte par défaut)</li>
-            <li><strong>Email</strong> (colonne de type Email)</li>
-            <li><strong>Message</strong> (colonne de type texte brut)</li>
-        </ol>
+        <div class="step">
+            <h2>Étape 2 : Configurer le Webhook</h2>
+            <p>Dans votre tableau de bord Make, créez un nouveau scénario et ajoutez un module <strong>Webhooks</strong>. Ce webhook servira à recevoir les réponses envoyées depuis votre formulaire.</p>
+        </div>
 
-        <h2>Étape 2 : Créer le Webhook de réception sur Make</h2>
-        <p>Un Webhook est une URL spéciale capable de "recevoir" des informations instantanément dès qu'un formulaire est validé :</p>
-        <ol>
-            <li>Sur votre tableau de bord Make, créez un nouveau scénario.</li>
-            <li>Sélectionnez le module <strong>Webhooks</strong> et choisissez l'action <strong>Custom Webhook</strong>.</li>
-            <li>Cliquez sur "Add" pour générer une URL unique. Copiez cette URL et collez-la dans les réglages de votre outil de formulaire (Typeform, Elementor, Tally, etc.).</li>
-        </ol>
+        <div class="step">
+            <h2>Étape 3 : Relier à Notion</h2>
+            <p>Ajoutez un second module <strong>Notion (Create a Database Item)</strong>. Connectez votre espace Notion puis mappez les champs de votre formulaire avec les colonnes de votre table Notion.</p>
+        </div>
 
-        <h2>Étape 3 : Configurer l'action d'enregistrement dans Notion</h2>
-        <p>Une fois que Make intercepte les données du formulaire, il doit les envoyer au bon endroit :</p>
-        <ol>
-            <li>Ajoutez un second module à votre scénario et cherchez <strong>Notion</strong>.</li>
-            <li>Sélectionnez l'action <strong>Create a Database Item</strong> (Créer un élément de base de données).</li>
-            <li>Connectez votre compte Notion et donnez l'autorisation d'accéder à la page créée à l'étape 1.</li>
-            <li>Liez les champs : faites glisser la donnée du formulaire <i>Prénom/Nom</i> dans la case "Nom" de Notion, et faites de même pour l'adresse e-mail et le contenu du texte.</li>
-        </ol>
-
-        <h2>Étape 4 : Activation et test en conditions réelles</h2>
-        <p>Activez votre scénario sur Make en basculant l'interrupteur sur <strong>ON</strong>. Allez sur votre site internet et soumettez un faux message dans votre formulaire. Ouvrez votre page Notion : une nouvelle ligne vient de se créer instantanément avec toutes les informations saisies ! Vous venez de créer un CRM automatisé et gratuit.</p>
-
-        <!-- Bloc de Maillage SEO Interne -->
-        <div style="margin-top: 3rem; padding-top: 1.5rem; border-top: 1px solid #e2e8f0;">
-            <h3>💡 Continuez votre lecture :</h3>
-            <p>• Vous utilisez des tableurs ? Apprenez à <a href="tuto-sheets-make.html">envoyer des e-mails automatiques depuis Google Sheets</a>.</p>
-            <p>• Vous hésitez sur l'outil ? Lisez notre <a href="make-vs-zapier.html">comparatif complet entre Make et Zapier</a>.</p>
+        <div class="step">
+            <h2>Étape 4 : Activer l'automatisation</h2>
+            <p>Lancez un test pour vérifier que la donnée arrive correctement dans Notion, puis basculez votre scénario sur <strong>ON</strong> pour qu'il fonctionne en continu.</p>
         </div>
     </main>
 
-    <footer>
-        <p>&copy; 2026 AutomationLab. Tous droits réservés.</p>
+    <footer style="margin-top: 4rem; padding: 2rem 1rem; border-top: 1px solid #e2e8f0; background: #ffffff; text-align: center;">
+        <p style="margin: 0 0 1.5rem 0; font-weight: bold; color: #0f172a;">&copy; 2026 AutomationLab. Tous droits réservés.</p>
+        
+        <ul style="list-style: none; padding: 0; margin: 0 auto; max-width: 650px; text-align: left; font-size: 0.9rem; line-height: 1.6; color: #475569;">
+            <li style="margin-bottom: 1rem; padding-left: 1.5rem; text-indent: -1.5rem;">
+                📢 <strong>Transparence d'affiliation :</strong> AutomationLab est soutenu par ses lecteurs. Certains liens présents dans nos guides sont des liens affiliés. Si vous cliquez dessus pour créer un compte ou acheter un abonnement, nous pouvons percevoir une commission, sans aucun surcoût pour vous.
+            </li>
+            <li style="margin-bottom: 0.7rem;">
+                ⚖️ <strong>Informations éditeur :</strong> Consulter nos <a href="mentions-legales.html" style="color: #6366f1; text-decoration: none; font-weight: 600;">Mentions Légales</a> (Hébergement GitHub Pages, propriété intellectuelle).
+            </li>
+            <li style="margin-bottom: 0.7rem;">
+                🔒 <strong>Respect de la vie privée :</strong> Consulter notre <a href="confidentialite.html" style="color: #6366f1; text-decoration: none; font-weight: 600;">Politique de Confidentialité</a> (Gestion du RGPD et des cookies tiers).
+            </li>
+        </ul>
     </footer>
 
 </body>
