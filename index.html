@@ -15,10 +15,13 @@
         .container { max-width: 1100px; margin: 0 auto; padding: 2rem 1rem; }
         .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; }
         .card { background: white; border-radius: 12px; border: 1px solid #e2e8f0; padding: 2rem; display: flex; flex-direction: column; justify-content: space-between; box-shadow: 0 4px 6px rgba(0,0,0,0.05); }
+        .card.featured { border: 2px solid var(--p); background: #f0f3ff; }
         .card h2 { font-size: 1.3rem; margin-top: 0; }
         .card p { color: var(--txt-l); margin-bottom: 1.5rem; }
         .btn { display: block; background: var(--p); color: white; padding: 0.75rem; border-radius: 8px; text-decoration: none; font-weight: bold; text-align: center; }
         .btn:hover { background: var(--pd); }
+        .btn-alt { background: #0f172a; }
+        .btn-alt:hover { background: #1e293b; }
         footer { text-align: center; padding: 4rem 1rem; color: var(--txt-l); }
     </style>
 </head>
@@ -36,6 +39,12 @@
     <main class="container">
         <div class="grid">
             
+            <div class="card featured">
+                <h2>🚀 Découvrir Make (Integromat)</h2>
+                <p>La plateforme la plus puissante pour automatiser tous vos flux de travail et vos applications en quelques clics.</p>
+                <a href="https://www.make.com/en/register?pc=vetnaturel" target="_blank" rel="noopener" class="btn btn-alt">Créer un compte Make gratuit</a>
+            </div>
+
             <div class="card">
                 <h2>Make vs Zapier : Quel outil choisir ?</h2>
                 <p>Hésitez-vous entre les deux géants du No-code ? Découvrez notre comparatif complet basé sur les tarifs et la simplicité.</p>
@@ -57,7 +66,7 @@
         </div>
     </main>
 
-        <footer style="margin-top: 4rem; padding: 2rem 1rem; border-top: 1px solid #e2e8f0; background: #ffffff; text-align: center;">
+    <footer style="margin-top: 4rem; padding: 2rem 1rem; border-top: 1px solid #e2e8f0; background: #ffffff; text-align: center;">
         <p style="margin: 0 0 1.5rem 0; font-weight: bold; color: #0f172a;">&copy; 2026 AutomationLab. Tous droits réservés.</p>
         
         <ul style="list-style: none; padding: 0; margin: 0 auto; max-width: 650px; text-align: left; font-size: 0.9rem; line-height: 1.6; color: #475569;">
@@ -72,7 +81,6 @@
             </li>
         </ul>
     </footer>
-
 
 </body>
 </html>
